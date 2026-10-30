@@ -1,7 +1,7 @@
 mod.id = "optimized_fullbright"
 mod.name = "Optimized Fullbright"
 mod.group = "net.tricube"
-mod.version = "2.0.0"
+mod.version = "2.0.1"
 mod.channel_tag = ""
 mod.description = "Fullbright mod that disables the lighting system to improve performance."
 mod.authors = ["tricube"]
@@ -20,7 +20,7 @@ name = "tricube"
 url = "https://github.com/ghost"
 
 [fabric]
-deps.fabric-loader = "0.19.2"
+deps.fabric-loader = "0.19.5"
 deps.craft-config = "1.1.11"
 
 [fabric."1.20.1"]
@@ -50,14 +50,15 @@ publish.additionalVersions = ["26.1.1", "26.1.2"]
 
 [fabric."26.2"]
 deps.minecraft = "26.2"
-deps.fabric-api = "0.152.1+26.2"
+deps.fabric-api = "0.161.0+26.2"
 deps.modmenu = "20.0.0-beta.2"
+publish.additionalVersions = ["26.3"]
 
 [forge]
-deps.craft-config = "1.1.7"
+deps.craft-config = "1.1.12"
 
 [forge."1.20.1"]
-deps.craft-config = "1.1.5"
+deps.craft-config = "1.1.12"
 deps.minecraft = "1.20.1"
 deps.forge = "47.4.18"
 
@@ -77,3 +78,12 @@ deps.neoforge = "21.11.42"
 deps.minecraft = "26.1"
 deps.neoforge = "26.1.0.19-beta"
 publish.additionalVersions = ["26.1.1", "26.1.2"]
+
+#[neoforge."26.2"]
+#deps.minecraft = "26.1"
+#deps.neoforge = "26.2.0.13-beta"
+
+#[neoforge."26.3"]
+#deps.minecraft = "26.1"
+#deps.neoforge = "26.3.0.1-beta"
+

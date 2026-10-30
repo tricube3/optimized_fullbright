@@ -9,6 +9,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.tricube.optimized_fullbright.ModInit;
 import net.tricube.optimized_fullbright.ThreadChecker;
+import net.tricube.optimized_fullbright.config.Config;
 
 @Mod.EventBusSubscriber(modid = ModInit.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class ForgeClientEventSubscriber {
@@ -19,6 +20,11 @@ public class ForgeClientEventSubscriber {
 		if(ModList.get().isLoaded("scalablelux")){
 			ThreadChecker.hasScalableLux();
 			ModInit.LOGGER.info("Found ScalableLux, enabling compatibility fix.");
+		};
+		if(ModList.get().isLoaded("distanthorizons")){
+			ThreadChecker.hasDistantHorizons();
+			ModInit.LOGGER.info("Found Distant Horizons, disabling texture updates optimization.");
+			if(Config.disableTextureUpdates.get()) Config.disableTextureUpdates.set(false);
 		};
 	}
 }

@@ -114,13 +114,12 @@ private fun ModPublishExtension.curseforge(
 
 	this.accessToken = accessToken
 	minecraftVersions.addAll(listOf(ctx.currentMcVersion) + additionalVersions)
-
+	client.set(true)
 	deps.required.forEach { dep -> whenNotNull(dep.curseforge) { requires(it) } }
 	deps.optional.forEach { dep -> whenNotNull(dep.curseforge) { optional(it) } }
 	deps.incompatible.forEach { dep -> whenNotNull(dep.curseforge) { incompatible(it) } }
 	deps.embeds.forEach { dep -> whenNotNull(dep.curseforge) { embeds(it) } }
 }
-
 private fun whenNotNull(stringProp: Property<String>, action: (String) -> Unit) {
 	if (!stringProp.orNull.isNullOrBlank()) action(stringProp.get())
 }

@@ -1,7 +1,7 @@
 {
   "package": "net.tricube.optimized_fullbright.mixin",
   "required": true,
-  "refmap": "optimized_fullbright.mixins.refmap.json",
+  ${refmap}
   "minVersion": "0.8",
   "compatibilityLevel": "${java}",
   "injectors": {

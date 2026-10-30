@@ -9,6 +9,7 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.tricube.optimized_fullbright.ModInit;
 import net.tricube.optimized_fullbright.ThreadChecker;
+import net.tricube.optimized_fullbright.config.Config;
 
 @EventBusSubscriber(modid = ModInit.MOD_ID, value = Dist.CLIENT)
 public class NeoforgeClientEventSubscriber {
@@ -18,6 +19,11 @@ public class NeoforgeClientEventSubscriber {
 		if(ModList.get().isLoaded("scalablelux")){
 			ThreadChecker.hasScalableLux();
 			ModInit.LOGGER.info("Found ScalableLux, enabling compatibility fix.");
+		};
+		if(ModList.get().isLoaded("distanthorizons")){
+			ThreadChecker.hasDistantHorizons();
+			ModInit.LOGGER.info("Found Distant Horizons, disabling texture updates optimization.");
+			if(Config.disableTextureUpdates.get()) Config.disableTextureUpdates.set(false);
 		};
 	}
 }

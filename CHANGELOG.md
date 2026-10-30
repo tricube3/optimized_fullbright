@@ -1,1 +1,1 @@
-26.2 support
+add distant horizon compatibility fix

@@ -40,7 +40,7 @@ public class Config {
 
 	public static final ConfigOption<Boolean> disableTextureUpdates =
 			ConfigOption.booleanOption(Component.literal("Disable Texture Updates"), true)
-					.description(Component.literal("Stop light color/texture updates."));
+					.description(Component.literal("Stop light color/texture updates.\n§oMay cause issue with LOD mods (Distant Horizons)"));
 
 	public static final CraftConfig config = CraftConfig.create(ModInit.MOD_ID)
 			.title(Component.literal("Optimized Fullbright Config"))

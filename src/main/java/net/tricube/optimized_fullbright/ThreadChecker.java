@@ -6,6 +6,7 @@ import net.minecraft.server.MinecraftServer;
 import net.tricube.optimized_fullbright.config.Config;
 
 public class ThreadChecker {
+	public static boolean distantHorizon = false;
     public static boolean scalableLux = false;
     public static boolean isClient() {
         Minecraft mc = Minecraft.getInstance();
@@ -13,6 +14,12 @@ public class ThreadChecker {
         if (server == null) return true;
         return !server.isSameThread() && mc.isSameThread();
     }
+	public static boolean checkDistantHorizons() {
+		return distantHorizon;
+	}
+	public static void hasDistantHorizons(){
+		distantHorizon = true;
+	}
     public static boolean checkScalableLux() {
         return scalableLux;
     }
